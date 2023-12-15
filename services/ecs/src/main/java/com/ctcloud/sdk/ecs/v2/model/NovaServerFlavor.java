@@ -1,0 +1,261 @@
+package com.ctcloud.sdk.ecs.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ *  
+ */
+public class NovaServerFlavor {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "links")
+
+    private List<NovaLink> links = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vcpus")
+
+    private Integer vcpus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ram")
+
+    private Integer ram;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk")
+
+    private Integer disk;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ephemeral")
+
+    private Integer ephemeral;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "swap")
+
+    private Integer swap;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "original_name")
+
+    private String originalName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_specs")
+
+    private Map<String, String> extraSpecs = null;
+
+    public NovaServerFlavor withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public NovaServerFlavor withLinks(List<NovaLink> links) {
+        this.links = links;
+        return this;
+    }
+
+    public NovaServerFlavor addLinksItem(NovaLink linksItem) {
+        if (this.links == null) {
+            this.links = new ArrayList<>();
+        }
+        this.links.add(linksItem);
+        return this;
+    }
+
+    public NovaServerFlavor withLinks(Consumer<List<NovaLink>> linksSetter) {
+        if (this.links == null) {
+            this.links = new ArrayList<>();
+        }
+        linksSetter.accept(this.links);
+        return this;
+    }
+
+    public List<NovaLink> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<NovaLink> links) {
+        this.links = links;
+    }
+
+    public NovaServerFlavor withVcpus(Integer vcpus) {
+        this.vcpus = vcpus;
+        return this;
+    }
+
+    public Integer getVcpus() {
+        return vcpus;
+    }
+
+    public void setVcpus(Integer vcpus) {
+        this.vcpus = vcpus;
+    }
+
+    public NovaServerFlavor withRam(Integer ram) {
+        this.ram = ram;
+        return this;
+    }
+
+    public Integer getRam() {
+        return ram;
+    }
+
+    public void setRam(Integer ram) {
+        this.ram = ram;
+    }
+
+    public NovaServerFlavor withDisk(Integer disk) {
+        this.disk = disk;
+        return this;
+    }
+
+    public Integer getDisk() {
+        return disk;
+    }
+
+    public void setDisk(Integer disk) {
+        this.disk = disk;
+    }
+
+    public NovaServerFlavor withEphemeral(Integer ephemeral) {
+        this.ephemeral = ephemeral;
+        return this;
+    }
+
+    public Integer getEphemeral() {
+        return ephemeral;
+    }
+
+    public void setEphemeral(Integer ephemeral) {
+        this.ephemeral = ephemeral;
+    }
+
+    public NovaServerFlavor withSwap(Integer swap) {
+        this.swap = swap;
+        return this;
+    }
+
+    public Integer getSwap() {
+        return swap;
+    }
+
+    public void setSwap(Integer swap) {
+        this.swap = swap;
+    }
+
+    public NovaServerFlavor withOriginalName(String originalName) {
+        this.originalName = originalName;
+        return this;
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
+
+    public NovaServerFlavor withExtraSpecs(Map<String, String> extraSpecs) {
+        this.extraSpecs = extraSpecs;
+        return this;
+    }
+
+    public NovaServerFlavor putExtraSpecsItem(String key, String extraSpecsItem) {
+        if (this.extraSpecs == null) {
+            this.extraSpecs = new HashMap<>();
+        }
+        this.extraSpecs.put(key, extraSpecsItem);
+        return this;
+    }
+
+    public NovaServerFlavor withExtraSpecs(Consumer<Map<String, String>> extraSpecsSetter) {
+        if (this.extraSpecs == null) {
+            this.extraSpecs = new HashMap<>();
+        }
+        extraSpecsSetter.accept(this.extraSpecs);
+        return this;
+    }
+
+    public Map<String, String> getExtraSpecs() {
+        return extraSpecs;
+    }
+
+    public void setExtraSpecs(Map<String, String> extraSpecs) {
+        this.extraSpecs = extraSpecs;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        NovaServerFlavor that = (NovaServerFlavor) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.ephemeral, that.ephemeral)
+            && Objects.equals(this.swap, that.swap) && Objects.equals(this.originalName, that.originalName)
+            && Objects.equals(this.extraSpecs, that.extraSpecs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, links, vcpus, ram, disk, ephemeral, swap, originalName, extraSpecs);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class NovaServerFlavor {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
+        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
+        sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
+        sb.append("    ephemeral: ").append(toIndentedString(ephemeral)).append("\n");
+        sb.append("    swap: ").append(toIndentedString(swap)).append("\n");
+        sb.append("    originalName: ").append(toIndentedString(originalName)).append("\n");
+        sb.append("    extraSpecs: ").append(toIndentedString(extraSpecs)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -1,0 +1,116 @@
+package com.ctcloud.sdk.ecs.v2.model;
+
+import com.ctcloud.sdk.core.SdkResponse;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ListServerGroupsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_groups")
+
+    private List<ListServerGroupsResult> serverGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private ListServerGroupsPageInfoResult pageInfo;
+
+    public ListServerGroupsResponse withServerGroups(List<ListServerGroupsResult> serverGroups) {
+        this.serverGroups = serverGroups;
+        return this;
+    }
+
+    public ListServerGroupsResponse addServerGroupsItem(ListServerGroupsResult serverGroupsItem) {
+        if (this.serverGroups == null) {
+            this.serverGroups = new ArrayList<>();
+        }
+        this.serverGroups.add(serverGroupsItem);
+        return this;
+    }
+
+    public ListServerGroupsResponse withServerGroups(Consumer<List<ListServerGroupsResult>> serverGroupsSetter) {
+        if (this.serverGroups == null) {
+            this.serverGroups = new ArrayList<>();
+        }
+        serverGroupsSetter.accept(this.serverGroups);
+        return this;
+    }
+
+    public List<ListServerGroupsResult> getServerGroups() {
+        return serverGroups;
+    }
+
+    public void setServerGroups(List<ListServerGroupsResult> serverGroups) {
+        this.serverGroups = serverGroups;
+    }
+
+    public ListServerGroupsResponse withPageInfo(ListServerGroupsPageInfoResult pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListServerGroupsResponse withPageInfo(Consumer<ListServerGroupsPageInfoResult> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new ListServerGroupsPageInfoResult();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    public ListServerGroupsPageInfoResult getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(ListServerGroupsPageInfoResult pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ListServerGroupsResponse that = (ListServerGroupsResponse) obj;
+        return Objects.equals(this.serverGroups, that.serverGroups) && Objects.equals(this.pageInfo, that.pageInfo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serverGroups, pageInfo);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListServerGroupsResponse {\n");
+        sb.append("    serverGroups: ").append(toIndentedString(serverGroups)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}
